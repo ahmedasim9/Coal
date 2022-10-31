@@ -1,0 +1,22 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+MSG DB 0DH,0AH,"SZABIST $"
+
+.CODE
+
+ MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    MOV AH,09H
+    MOV CX ,10
+    
+    PRINT:
+    
+    INT 21H
+    LOOP PRINT
+    MOV AH,4CH
+    INT 21H
+    
+    MAIN ENDP
+ END MAIN
