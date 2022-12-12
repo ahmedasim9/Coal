@@ -1,4 +1,4 @@
-Addd macro p3,p4
+Addition macro p3,p4
     mov bl,p3
     mov bh,p4
     add bl,bh
@@ -10,7 +10,7 @@ Addd macro p3,p4
 endm 
 
 
-Subb macro p1,p2
+Subtraction macro p1,p2
     mov bl,p1
     mov bh,p2
     sub bl,bh
@@ -31,8 +31,8 @@ v2 db '3'
 main proc
     mov ax,@data
     mov ds,ax
-    Addd v1,v2 
-    Subb v1,v2
+    Addition v1,v2 
+    Subtraction v1,v2
     
     
     mov ah,4ch
