@@ -2,7 +2,16 @@ printfunc macro p2
     mov dx,offset p2
     mov ah,9
     int 21h
-endm    
+endm
+
+NEWLINE MACRO P2          ; FUNCTION TO PRINT NEW LINE 
+    MOV DL,13
+    MOV AH,2
+    INT 21H
+    MOV DL,10
+    MOV AH,2 
+    INT 21H
+ENDM 
 
 .model small
 .stack 100h
@@ -15,6 +24,7 @@ main proc
     mov ax,@data
     mov ds,ax
     printfunc msg1
+    NEWLINE 
     printfunc msg2
     
     mov ah,4ch
